@@ -157,17 +157,12 @@ class BaseDb(object):
     def get_by_random(self, type, column, value, limit):
         # Open the connection
         self.connect()
-        resultList = []
-        for i in range(limit):
-            result = self.session.query(type).filter(
-                    or_(and_(func.length(KataDasar.kata) > value))).order_by(func.rand()).first()
+        result = self.session.query(type).filter(
+                or_(and_(func.length(KataDasar.kata) > value))).order_by(func.rand()).limit(limit).all()
 
-            if result is None:
-                break
-            resultList.append(result)
         # Close the connection
         self.disconnect()
-        return resultList
+        return result
 
     @ retry(retry=retry_if_exception_type((AttributeError, sqlalchemy.exc.OperationalError)),
             stop=stop_after_attempt(7), wait=wait_fixed(2))

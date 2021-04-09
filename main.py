@@ -41,12 +41,6 @@ def check_words():
         if (isValid['status']):
             data = result['data']
             
-            if (data['max'] > 101):
-                return {
-                    'status': False,
-                    'message': "Parameter 'max' must be less than 100",
-                }
-
             return api.get_words_with_length(data['length'], data['max'], data['random'])
 
         else:
