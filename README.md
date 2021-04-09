@@ -1,5 +1,9 @@
 # Bahasa Rest API
-API untuk mendapatkan kata Bahasa Indonesia
+API untuk mendapatkan kata Bahasa Indonesia secara acak
+
+## Install
+    
+    pip3 install -r requiremetns.txt
 
 ## Example Request
 - /check-words - (**POST**)
