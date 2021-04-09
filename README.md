@@ -6,7 +6,7 @@ API untuk mendapatkan kata Bahasa Indonesia secara acak
     pip3 install -r requiremetns.txt
 
 ## Example Request
-- /check-words - (**POST**)
+- /check-words - (**POST**)<br/>
     **Request body**:
 
         {
@@ -20,7 +20,7 @@ API untuk mendapatkan kata Bahasa Indonesia secara acak
             "message": "Kalimat terdapat pada Database"
         }
 
-- /words-by-length - (**POST**)
+- /words-by-length - (**POST**)<br/>
     **Request body** :     
 
         {
@@ -29,9 +29,9 @@ API untuk mendapatkan kata Bahasa Indonesia secara acak
             "random": true
         }
 
-    length : length of word
-    max    : max word list
-    random : Unordered words
+    length : length of word<br/>
+    max    : max word list<br/>
+    random : Unordered words<br/>
     
     **Response body**:
     
